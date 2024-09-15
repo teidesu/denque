@@ -184,7 +184,7 @@ Denque.prototype.removeOne = function removeOne(index) {
   i = (this._head + i) & this._capacityMask;
   var item = this._list[i];
   var k;
-  if (index < size / 2) {
+  if (i < size / 2) {
     for (k = index; k > 0; k--) {
       this._list[i] = this._list[i = (i - 1 + len) & this._capacityMask];
     }

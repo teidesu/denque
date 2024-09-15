@@ -446,6 +446,12 @@ describe('Denque.prototype.removeOne', function () {
     assert(a.length === 0);
   });
 
+  it('Should work with negative indexing', function () {
+    var a = new Denque([1, 2, 3, 4, 5, 6, 7, 8]);
+    assert(a.removeOne(-1) === 8);
+    assert(a.length === 7);
+    assert.deepEqual(a.toArray(), [1, 2, 3, 4, 5, 6, 7]);
+  });
 });
 
 describe('Denque.prototype.remove', function () {
